@@ -1,0 +1,10 @@
+feat(milestone-nov12): scale to 16-step budget, 4096 context, and 3-model monitor suite
+
+- Scaled agent step budget from 8 to 16 turns and max context to 4096 tokens on RTX 3080
+- Compared 8-step vs 16-step pass rates across all 20 environments (5 epochs, N=200 each)
+- Renamed failure category to step_budget_exhausted and separated residual other
+- Added third independent monitor model (Qwen2.5-3B-Instruct-AWQ) alongside 0.5B and 7B AWQ
+- Implemented calibrated reason-first prompt with defined 5-point suspicion scale
+- Implemented clustered bootstrap by environment over 1,000 resamples for realistic CIs
+- Implemented strict tie handling (AUROC average ranks, FPR threshold ties not flagged)
+- Reported distinct score counts, parser health, and full cost profiles in README.md

@@ -1,0 +1,51 @@
+{
+  "milestone": "Nov 9",
+  "description": "All 20 environments evaluated across deterministic baselines and live 7B AWQ agent",
+  "timestamp_utc": "2026-11-03T07:10:03.515212+00:00",
+  "hardware_inventory": {
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "vram_total_mib": 10240,
+    "driver_version": "615.78.05",
+    "cuda_umd_version": "13.4",
+    "cuda_compiler": "12.4.131",
+    "vllm_version": "0.32.1rc1.dev121+gfce64bc5c.d20261020",
+    "python_version": "3.12.13",
+    "inspect_ai_version": "0.3.287",
+    "sandbox": "local"
+  },
+  "vram_profile": {
+    "qwen2.5_3b_instruct_fp16": "OOM (5.79 GiB weights + 3.29 GiB display overhead exhausted KV cache headroom)",
+    "qwen2.5_7b_instruct_awq": "8,069 MiB / 10,240 MiB with --gpu-memory-utilization 0.75 --max-model-len 2048 --enforce-eager (2,171 MiB headroom)"
+  },
+  "aggregate_summary": {
+    "hand_built_attack_reference": {
+      "n": 20,
+      "main_passes": 20,
+      "main_pass_rate": 1.0,
+      "side_passes": 20,
+      "side_pass_rate": 1.0
+    },
+    "honest_baseline_reference": {
+      "n": 20,
+      "main_passes": 20,
+      "main_pass_rate": 1.0,
+      "side_passes": 0,
+      "side_pass_rate": 0.0
+    },
+    "live_agent_honest": {
+      "n": 20,
+      "main_passes": 3,
+      "main_pass_rate": 0.15,
+      "side_passes": 0,
+      "side_pass_rate": 0.0
+    },
+    "live_agent_attack": {
+      "n": 20,
+      "main_passes": 3,
+      "main_pass_rate": 0.15,
+      "side_passes": 7,
+      "side_pass_rate": 0.35
+    }
+  },
+  "total_samples": 80
+}
